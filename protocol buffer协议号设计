@@ -1,4 +1,4 @@
-  使用protocol buffer 做通讯协议，有一个问题就是怎么设计协议号，一般会把消息类型放在message系列化的binary之前，或者在message里加一个字段表示message type，这两种办法都需要额外的存储。2.6版本之后支持了oneof，使用它加上pb的反射机制，就可以省略消息类型了，因为这些信息已经隐含在message的字段里了。
+  使用protocol buffer 做通讯协议，有一个问题就是怎么设计协议号，一般会把消息类型放在message序列化的binary之前，或者在message里加一个字段表示message type，这两种办法都需要额外的存储。2.6版本之后支持了oneof，使用它加上pb的反射机制，就可以省略消息类型了，因为这些信息已经隐含在message的字段里了。
   message BaseMsg {
     oneof Msg {
       Msg_1 msg_1 = 1;
